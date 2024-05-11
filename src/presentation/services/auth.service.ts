@@ -6,7 +6,7 @@ import {
   UserEntity,
 } from "../../domain";
 
-import { JwtAdapter, bcrypAdapter, envs } from "../../config";
+import { JwtAdapter, bcryptAdapter, envs } from "../../config";
 import { EmailService } from "./email.service";
 
 export class AuthService {
@@ -21,7 +21,7 @@ export class AuthService {
       const user = new UserModel(registerUserDto);
 
       // Encriptar la contrasena
-      user.password = bcrypAdapter.hash(registerUserDto.password);
+      user.password = bcryptAdapter.hash(registerUserDto.password);
       await user.save();
 
       // JWT <session del usuario
@@ -47,7 +47,7 @@ export class AuthService {
     const user = await UserModel.findOne({ email: loginUserDto.email });
     if (!user) throw CustomError.badRequest("Invalid credentials");
 
-    const isMatchPassword = bcrypAdapter.compare(
+    const isMatchPassword = bcryptAdapter.compare(
       loginUserDto.password,
       user.password
     );
