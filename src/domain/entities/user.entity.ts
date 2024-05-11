@@ -15,7 +15,7 @@ export class UserEntity {
     const { id, _id, name, email, emailValidated, password, role, img } =
       object;
 
-    if (!id && !_id) throw CustomError.badRequest("Missing ID");
+    if (!id && !_id) throw CustomError.badRequest("Missing id");
 
     if (!name) throw CustomError.badRequest("Missing name");
 
