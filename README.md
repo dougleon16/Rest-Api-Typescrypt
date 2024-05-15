@@ -1,9 +1,15 @@
-# Rest Project + TypeScript
+# Rest Api Project + TypeScript
 
-Este proyecto previamente inicializado tiene todo lo necesario para trabajar con TypeScript, Express y Rest.
+Este proyecto previamente inicializado tiene todo lo necesario para trabajar con TypeScript, Express y Rest utilizando algunos principios
+de arquitectura limpia - (clean Arquitecture)
 
-Cada paso de su configuración ya se ha realizado previamente en el curso, por lo que solo es necesario clonar el proyecto y comenzar a trabajar.
+## Caracteristicas:
 
+- Clean Architecture
+- Autenticacion
+- JWT Token
+- Email Validation
+- Carga de Archivos (single and multiple)
 
 ## Instalación
 
